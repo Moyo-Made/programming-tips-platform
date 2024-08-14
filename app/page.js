@@ -1,12 +1,11 @@
 import Layout from "@/components/Layout";
-import TipCard from "@/components/TipCard";
-import TipList from "@/components/TipList";
+import SearchBar from "@/components/SearchBar";
 
 const page = () => {
 	return (
 		<div className="bg-gray-100 ">
 			<Layout />
-			<TipList />
+			<SearchBar />
 		</div>
 	);
 };
