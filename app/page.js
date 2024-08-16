@@ -1,11 +1,23 @@
-import Layout from "@/components/Layout";
-import SearchBar from "@/components/SearchBar";
+"use client";
+
+import Hero from "@/components/Hero";
+import TipFeed from "@/components/TipFeed";
+import { useEffect, useState } from "react";
 
 const page = () => {
+	const [tips, setTips] = useState([]);
+
+	useEffect(() => {
+		// Fetch tips from localStorage when the component mounts
+		const storedTips = JSON.parse(localStorage.getItem("tips") || "[]");
+		setTips(storedTips);
+	}, []);
+
 	return (
-		<div className="bg-gray-100 ">
-			<Layout />
-			<SearchBar />
+		<div className="">
+			<Hero />
+			<TipFeed tips={tips} />
+   
 		</div>
 	);
 };
